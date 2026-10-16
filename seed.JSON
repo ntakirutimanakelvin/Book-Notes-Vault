@@ -1,0 +1,112 @@
+[
+    {
+        "id": "rec_0001",
+        "title": "Things Fall Apart",
+        "author": "Chinua Achebe",
+        "pages": 209,
+        "tag": "Fiction",
+        "dateAdded": "2025-09-25",
+        "createdAt": "2025-09-25T10:00:00Z",
+        "updatedAt": "2025-09-25T10:00:00Z"
+    },
+    {
+        "id": "rec_0002",
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "pages": 256,
+        "tag": "Science",
+        "dateAdded": "2025-09-23",
+        "createdAt": "2025-09-23T10:00:00Z",
+        "updatedAt": "2025-09-23T10:00:00Z"
+    },
+    {
+        "id": "rec_0003",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "pages": 320,
+        "tag": "Self-help",
+        "dateAdded": "2025-09-20",
+        "createdAt": "2025-09-20T10:00:00Z",
+        "updatedAt": "2025-09-20T10:00:00Z"
+    },
+    {
+        "id": "rec_0004",
+        "title": "Lecture notes week 3",
+        "author": "Prof Mukamana",
+        "pages": 12,
+        "tag": "Notes",
+        "dateAdded": "2025-09-28",
+        "createdAt": "2025-09-28T10:00:00Z",
+        "updatedAt": "2025-09-28T10:00:00Z"
+    },
+    {
+        "id": "rec_0005",
+        "title": "One page poem",
+        "author": "Anon",
+        "pages": 1,
+        "tag": "Fiction",
+        "dateAdded": "2024-02-29",
+        "createdAt": "2024-02-29T10:00:00Z",
+        "updatedAt": "2024-02-29T10:00:00Z"
+    },
+    {
+        "id": "rec_0006",
+        "title": "Les Miserables",
+        "author": "Victor Hugo",
+        "pages": 1462,
+        "tag": "Fiction",
+        "dateAdded":"2025-01-01",
+        "createdAt": "2025-01-01T10:00:00Z",
+        "updatedAt": "2025-01-01T10:00:00Z"
+    },
+    {
+        "id": "rec_0007",
+        "title": "The The Book of Repeats",
+        "author": "Ann Smith-jones",
+        "pages": 88,
+        "tag": "Other",
+        "dateAdded": "2025-12-31",
+        "createdAt": "2025-12-31T10:00:00Z",
+        "updatedAt": "2025-12-31T10:00:00Z"
+    },
+    {
+        "id": "rec_0008",
+        "title": "Guns, Germs, and Steel",
+        "author": "Jared Diamond",
+        "pages": 528,
+        "tag": "History",
+        "dateAdded": "2025-09-27",
+        "createdAt": "2025-09-27T10:00:00Z",
+        "updatedAt": "2025-09-27T10:00:00Z"
+    },
+    {
+        "id": "rec_0009",
+        "title": "<b>Boldd</b> & Brave",
+        "author": "Dan O'Neil",
+        "pages": 150,
+        "tag": "Other",
+        "dateAdded": "2025-09-10",
+        "createdAt": "2025-09-10T10:00:00Z",
+        "updatedAt": "2025-09-10T10:00:00Z"
+    },
+    {
+        "id": "rec_0010",
+        "title": "Complete Encyclopedia of Everything",
+        "author": "J. R. Editor",
+        "pages": 9999,
+        "tag": "Science",
+        "dateAdded": "2025-02-28",
+        "createdAt": "2025-02-28T10:00:00Z",
+        "updatedAt": "2025-02-28T10:00:00Z"
+    },
+    {
+        "id": "rec_0011",
+        "title": "Becoming",
+        "author": "Michelle Obama",
+        "pages": 448,
+        "tag": "History",
+        "dateAdded": "2025-09-15",
+        "createdAt": "2025-09-15T10:00:00Z",
+        "updatedAt": "2025-09-15T10:00:00Z"
+    }
+]

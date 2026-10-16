@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Book &amp; Notes Vault</title>
+      <link rel="stylesheet" href="styles/main.css">
+      <script type="module" src="scripts/main.js"></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header>
+            <h1>Book &amp; Notes Vault</h1>
+            <nav aria-label="Main">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#form-section">Add</a></li>
+                <li><a href="#records">Records</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <main id="main">
+            <section id="about">
+                <h2>About</h2>
+                <p>Catalog your books. track pages and tags, and search ith regex .</p>
+                <p>Contact: <a href="https://github.com/ntakirutimanakelvin">Github</a></p>
+            </section>
+
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+                <label for="show-unit">Show size in</label>
+                <select id="show-unit">
+                    <option value="pages">Pages</option>
+                    <option value="minutes">Minutes (reading time)</option>
+                    <option value="hours">Hours (reading time)</option>
+                </select>
+                <div class="stats">
+                    <div class="stat"><span class="label">Books</span><strong id="stat-count">0</strong></div>
+                    <div class="stat"><span class="label">Total size</span><strong id="stat-total">0</strong></div>
+                    <div class="stat"><span class="label">Top tag</span><strong id="stat-top">-</strong></div>
+                </div>
+                
+                <p id="cap-message" role="status" aria-live="polite"></p>
+                <h3>Pages added in the last 7 days</h3>
+                <div id="trend" class="trend" aria-label="Pages added in the last 7 days"></div>
+
+            </section>
+            <section id="form-section">
+                <h2 id="form-title">Add book</h2>
+                <form id="book-form" novalidate>
+                    <input type="hidden" id="edit-id">
+
+                    <label for="title">Title</label>
+                    <input id="title" type="text" aria-describedby="title-error">
+                    <span class="error" id="title-error"></span>
+
+                    <label for="author">Author</label>
+                    <input id="author" type="text" aria-describedby="author-error">
+                    <span class="error" id="author-error"></span>
+
+                    <label for="pages">Pages</label>
+                    <input id="pages" type="text" inputmode="numeric" aria-describedby="pages-error">
+                    <span class="error" id="pages-error"></span>
+
+                    <label for="tag">Tag</label>
+                    <input id="tag" type="text" list="tag-list" aria-describedby="tag-error">
+                    <datalist id="tag-list">
+                        <option value="Fiction"><option value="Science"><option value="History">
+
+                        <option value="self-help"><option value="Notes"><option value="Other">
+
+                    </datalist>
+                    <span class="error" id="tag-error"></span>
+
+                    <label for="dateAdded">Date added (YYYY-MM-DD)</label>
+                    <input id="dateAdded" type="text" placeholder="2025-09-29" aria-describedby="dateAdde-error">
+                    <span class="error" id="dateAdded-error"></span>
+
+                    <div class="buttons">
+                        <button type="submit">Save</button>
+                        <button type="button" id="cancel-btn" hidden>Cancel edit</button>
+                    </div>
+                    <p id="form-status" role="status"></p>
+                </form>
+            </section>
+
+            <section id="records">
+                <h2>Records</h2>
+                <div class="toolbar">
+                <div>
+                    <label for="search">Search (regex)</label>
+                    <input id="search" type="text" placeholder="e.g. the|history">
+                </div>
+                <div>
+                    <input id="case-toggle" type="checkbox" checked>
+                    <label for="case-toggle" class="inline">Ignore case</label>
+                </div>
+                <div>
+                    <label for="sort">Sort by</label>
+                    <select id="sort">
+                        <option value="date-desc">Date added(newest)</option>
+                        <option value="date-asc">Date added(oldest)</option>
+                        <option value="title-asc">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                        <option value="pages-asc">Pages low-high</option>
+                        <option value="pages-desc">Pages high-low</option>
+                    </select>
+                </div>
+            </div>
+            <p id="search-status" role="status"></p>
+            <table>
+                <thead>
+                    <tr><th>Title</th><th>Author</th><th>Tag</th><th id="size-head">Size</th><th>Date added</th><th>Actions</th></tr>
+
+                </thead>
+                <tbody id="rows"></tbody>
+            </table>
+            </section>
+
+            <section id="settings">
+                <h2>Settings</h2>
+                <label for="cap">Page cap (total pages you want to stay under)</label>
+                <input  id="cap" type="text" inputmode="numeric" placeholder="0 = no cap">
+                <label for="mpp">Reading speed (minutes per page)</label>
+                <input id="mpp" type="text" inputmode="decimal">
+                <div class="buttons">
+                    <button type="button" id="save-settings">Save settings</button>
+                    <button type="button" id="export-btn">Export JSON</button>
+                    <button type="button" id="seed-btn">Load sample data</button>
+                </div>
+                <label for="import-file">Import JSON</label>
+                <input id="import-file" type="file" accept=".json,application/json">
+                <p id="settings-status" role="status"></p>
+            </section>
+        </main>
+        <footer><p>Built for Book Register.</p></footer>
+    </body>
+</html>

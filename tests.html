@@ -6,30 +6,30 @@
         <ul id="results"></ul>
         <script type="module">
             import { rules, validateRecord, validateImport, validateMpp } from './scripts/validators.js';
-            import { compilerRegex, highlight } from './scripts/search.js';
+            import { compileRegex, highlight } from './scripts/search.js';
 
             const list = document.getElementById('results');
             function check(name, condition) {
-                const li = document.createElement('results');
+                const li = document.createElement('li');
                 li.textContent = (condition ? 'PASS: ' : 'FAIL: ') + name;
                 list.appendChild(li);
             }
             const good = { title: 'Dune', author: 'Frank Herbert', pages: '412', tag: 'Fiction', dateAdded: '2025-01-01'};
 
-            check('title rejects leading space', !rules.title.test('Dune'));
+            check('title rejects leading space', !rules.title.test(' Dune'));
             check('title accepts normal text', rules.title.test('Dune'));
             check('author accepts "Dan o\'Neil"', rules.author.test("Dan O'Neil"));
             check('author rejects digits', !rules.author.test('Dan2'));
             check('pages accepts 412', rules.pages.test('412'));
-            check('pages rejects leading zero 05', !rules.date.test('05'));
-            check('date accepts 2025-09-29', rules.date.test('2025-09-29'));
-            check('date rejects month 13', !rules.date.test('2025-13-01'));
-            check('tag accepts "Self-help"', !rules.tag.test('Self-help'));
-            check('tag rejects digit', !rules.duplicateword.test('Fiction2'));
-            check('duplicate word found', rules.duplicateword.test('the the cat'));
+            check('pages rejects leading zero 05', !rules.pages.test('05'));
+            check('date accepts 2025-09-29', rules.pages.test('2025-09-29'));
+            check('date rejects month 13', !rules.pages.test('2025-13-01'));
+            check('tag accepts "Self-help"', rules.tag.test('Self-help'));
+            check('tag rejects digit', !rules.tag.test('Fiction2'));
+            check('duplicate word found', rules.duplicateWord.test('the the cat'));
             check('valid record has no errors', Object.keys(validateRecord(good)).length === 0);
             check('12.5 pages is rejected', validateRecord({ ...good, pages: '12.5'}).pages !== undefined);
-            check('0 oages is rejected', validateRecord({ ...good, pages: '0' }).pages !== undeefined);
+            check('0 oages is rejected', validateRecord({ ...good, pages: '0' }).pages !== undefined);
             check('repeated title word is rejected', validateRecord({ ...good, title:'Big big book' }).title !== undefined);
             check('import accepts good data', validateImport([{ id: 'a', title: 'T', author: 'A', pages: 5,tag: 'Notes',dateAdded: '2025-01-01' }]) === null);
             check('import rejects non-list', validateImport({}) !== null);
@@ -38,7 +38,7 @@
             check('invalid regex returns null', compileRegex('(') === null);
             check('highlight wraps match', highlight('history', /sto/i) === 'hi<mark>sto</mark>ry');
             check('highlight escapes html', highlight('<b>', null) === '&lt;b&gt;');
-                
+
         </script>
     </body>
 </html>
