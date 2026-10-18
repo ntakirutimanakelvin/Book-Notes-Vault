@@ -132,16 +132,16 @@ $('import-file').addEventListener('change', async e => {
     }
 });
 
-$('seed-btn').addEventListener('click', async () => {
+$('seen-btn').addEventListener('click', async () => {
     try {
-        const res =await fetch('seed.json');
+        const res = await fetch('seed.json');
         replaceAll(await res.json());
         say('settings-status', 'Sample data loaded.');
         refresh();
     } catch {
         say('settings-status', 'Could not load seed.json (run ith a local server).');
     }
-});
+})
 
 $('cap').value = state.cap || '';
 $('mpp').value = state.mpp;
