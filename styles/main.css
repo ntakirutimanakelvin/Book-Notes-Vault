@@ -72,7 +72,7 @@ footer { text-align: center; padding: 1rem; }
     header h1 {margin: 0;}
 }
 @media (min-width: 1024px) {
-    table {display: tables; width:100%; border-collapse: collapse; }
+    table {display: table; width:100%; border-collapse: collapse; }
     thead {display: table-header-group; position: static; }
     tbody{ display: table-row-group; }
     tr {display: table-row; border: 0;padding: 0; margin: 0; }

@@ -14,7 +14,7 @@ export function validateRecord(rec) {
 
     if (!rules.title.test(title)) errors.title = 'No spaces at the start or end, and it cannot be empty.';
     else if (rules.doubleSpaces.test(title)) errors.title = 'Use single spaces between words.';
-    else if (rules.duplicateWord.test(title)) errors.title = 'A word is repeated (e.g. "the the).';
+    else if (rules.duplicateWord.test(title)) errors.title = 'A word is repeated (e.g. "the the").';
     if (!rules.author.test(String(rec.author))) errors.author = 'Letters, dots, spaces, apostrophes and hyphens only.';
 
     const pages = String(rec.pages);
@@ -33,7 +33,7 @@ export function validateImport(data) {
         if (typeof r.id !== 'string') return 'A record is missing its id.';
         if (typeof r.title !== 'string' || r.title === '') return `Record ${r.id}: bad title.`;
         if (typeof r.author !== 'string') return `Record ${r.id}: bad author.`;
-        if (!Number.isInteger(r.pages) || r.pages < 1) return `Record ${r.id}: bad paged.`;
+        if (!Number.isInteger(r.pages) || r.pages < 1) return `Record ${r.id}: bad pages.`;
         if (!rules.tag.test(String(r.tag))) return `Record ${r.id}: bad tag.`;
         if (!rules.date.test(String(r.dateAdded))) return `Record ${r.id}: bad dateAdded.`;
 
